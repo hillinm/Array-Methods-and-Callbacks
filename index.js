@@ -6,10 +6,15 @@ console.log('its working');
 
 /* Task 1: Investigate the data above. Practice accessing data by console.log-ing the following pieces of data 
 
-(a) Home Team name for 2014 world cup final
-(b) Away Team name for 2014 world cup final
-(c) Home Team goals for 2014 world cup final
-(d) Away Team goals for 2014 world cup final
+(a) Home Team name for 2014 world cup final*/
+console.log("The home team for the 2014 World Cup Final was " + fifaData.filter(home => {return home.Year === 2014 && home.Stage === "Final"})[0]["Home Team Name"]);
+/*(b) Away Team name for 2014 world cup final*/
+console.log("The away team for the 2014 World Cup Final was " + fifaData.filter(away => {return away.Year === 2014 && away.Stage === "Final"})[0]["Away Team Name"]);
+/*(c) Home Team goals for 2014 world cup final*/
+console.log("The home team score for the 2014 World Cup Final was " + fifaData.filter(homeGoals => {return homeGoals.Year === 2014 && homeGoals.Stage === "Final"})[0]["Home Team Goals"]);
+/*(d) Away Team goals for 2014 world cup final*/
+console.log("The away team score for the 2014 World Cup Final was " + fifaData.filter(awayGoals => {return awayGoals.Year === 2014 && awayGoals.Stage === "Final"})[0]["Away Team Goals"]);
+/*
 (e) Winner of 2014 world cup final */
 
 
