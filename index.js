@@ -48,11 +48,12 @@ function getWinners(callback) {
     let winners = [];
     for (let i = 0; i < callback.length; i++) {
         if (callback[i]["Home Team Goals"] > callback[i]["Away Team Goals"]) {
-            winners.push(callback[i]["Home Team Name"]);
+            winners.push(callback[i]);
         } else {
-            winners.push(callback[i]["Away Team Name"]);
+            winners.push(callback[i]);
         }
     }
+    console.log(winners);
     return winners;
 };
 
@@ -120,13 +121,15 @@ getCountryWins(fifaData, "BRA");
 
 /* Stretch 3: Write a function called getGoals() that accepts a parameter `data` and returns the team with the most goals score per appearance (average goals for) in the World Cup finals */
 
-function getGoals(/* code here */) {
+function getGoals(data) {
+    let mostGoals = 0;
+    for (let i =0; i < data.length; i++) {
+    let currentGoals = data[i]["Home Team Goals"]
+    console.log(currentGoals);   
+    }
+    }
 
-    /* code here */
-
-};
-
-getGoals();
+getGoals(getFinals(fifaData));
 
 
 /* Stretch 4: Write a function called badDefense() that accepts a parameter `data` and calculates the team with the most goals scored against them per appearance (average goals against) in the World Cup finals */
